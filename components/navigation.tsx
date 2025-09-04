@@ -98,10 +98,13 @@ export function Navigation() {
                   <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                     <Avatar className="h-8 w-8">
                       <AvatarFallback className="bg-primary text-primary-foreground">
+                        {/* --- MODIFIED: Added a check for user.name --- */}
                         {user.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
+                          ? user.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")
+                          : "U"}
                       </AvatarFallback>
                     </Avatar>
                   </Button>
